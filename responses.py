@@ -11,7 +11,7 @@ def handle_response(message) -> str:
     if words[0] == "!mistral":
         prompt = " ".join(words[1:])
         with concurrent.futures.ProcessPoolExecutor() as executor:
-            future = executor.submit(mistral, promt)
+            future = executor.submit(mistral, prompt)
             result = future.result()
             return result
     else:
